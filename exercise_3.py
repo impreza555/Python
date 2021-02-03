@@ -1,5 +1,4 @@
-n = int(input('Введите число "n": '))
-tmp = str(n)
-nn = int(tmp + tmp)
-nnn = int(tmp + tmp + tmp)
-print('Сумма чисел "n + nn + nnn" будет равна: ', (n + nn + nnn))
+n = input('Введите число "n": ')
+nn = n * 2
+nnn = n * 3
+print('Сумма чисел "n + nn + nnn" будет равна: ', int(n) + int(nn) + int(nnn))
