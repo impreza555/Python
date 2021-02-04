@@ -1,4 +1,4 @@
-print(f'Создадим список из произвольных элементов\n{"-" * 42}')
+print(f'Создадим список из произвольных элементов\nМожно вводить строки натуральные и дробные числа\n{"-" * 49}')
 user_list = []
 j = 0
 while True:
@@ -7,7 +7,10 @@ while True:
         break
     else:
         try:
-            user_list.append(int(elem))
+            if '.' in elem:
+                user_list.append(float(elem))
+            else:
+                user_list.append(int(elem))
         except ValueError:
             user_list.append(elem)
 print(f'Получили следующий список:\n{user_list}\nТеперь попарно поменяем местами элементы в списке')

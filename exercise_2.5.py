@@ -19,8 +19,8 @@ while True:
                     origin_list.append(elem)
                     break
                 elif origin_list[i] > elem > origin_list[i + 1]:
-                    break
                     origin_list.insert(i + 1, elem)
+                    break
         except ValueError:
             print('Вы должны ввести число!')
             continue
