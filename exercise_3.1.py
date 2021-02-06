@@ -1,4 +1,7 @@
 def division(*args):
+    """
+    Функция принимает два числа и выполняет их деление.
+    """
     while True:
         try:
             dividend = float(input('Введите делимое: '))
