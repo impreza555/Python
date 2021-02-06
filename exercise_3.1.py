@@ -1,4 +1,4 @@
-def division():
+def division(*args):
     while True:
         try:
             dividend = float(input('Введите делимое: '))
@@ -15,7 +15,7 @@ def division():
         except ValueError:
             print('Вы должны ввести число!')
 
-    return dividend / divider
+    return round(dividend / divider, 3)
 
 
-print(f'Резуьтат: {round(division(), 3)}')
+print(f'Резуьтат: {division()}')
