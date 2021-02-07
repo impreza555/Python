@@ -11,7 +11,7 @@ def exponentiation(x, y):
     tmp = 1
     while y > 0:
         tmp = tmp * x
-        y = y - 1
+        y -= 1
     res_2 = 1 / tmp
     return res_1, res_2
 
@@ -23,4 +23,4 @@ def exponentiation(x, y):
 
 a, b = exponentiation(abs(float(input('Введите действительное положительное число: '))),
                       int(input('Введите целое отрицательное число: ')))
-print(f'Результат при использовании "**": {a}, без использования "**": {b}')
+print(f'Результат с использованием "**": {a}, с использованием цикла: {b}')
