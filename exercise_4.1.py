@@ -1,7 +1,7 @@
 from sys import argv
 
-_, out_hours, rate_hour, prize = argv
+_, hours_worked, rate_hour, bonus = argv
 try:
-    print(f'Зар. плата равна: {float(out_hours) * float(rate_hour) + float(prize)}')
+    print(f'Зар. плата равна: {float(hours_worked) * float(rate_hour) + float(bonus)}')
 except ValueError:
     print('Требуется вводить числа')
