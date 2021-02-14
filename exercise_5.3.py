@@ -16,5 +16,5 @@ for name, salary in empl_dict.items():
     salaries.append(salary)
     if salary < required_salary:
         losers.append(name)
-print(f'\n{"-" * 82}\nСотрудники: {(", ".join(name for name in list(losers)))} имеют оклад менее {required_salary}!')
+print(f'\n{"-" * 82}\nСотрудники: {(", ".join(name for name in losers))} имеют оклад менее {required_salary}!')
 print(f'{"-" * 82}\nСредняя величина дохода сотрудников {sum(salaries) / len(salaries)}')
