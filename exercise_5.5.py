@@ -9,4 +9,4 @@ content = content.split()
 result_content = []
 for i in content:
     if i.lstrip('-').replace('.', '', 1).isdigit(): result_content.append(i)
-print(sum(map(float, result_content)))
+print(f'Сумма введённых чисел: {sum(map(float, result_content))}')
