@@ -1,12 +1,12 @@
 some_file = open('exercise_5.2.txt', 'r', encoding='utf-8')
 some_text = some_file.read()
-some_file.close()
-some_file = open('exercise_5.2.txt', 'r', encoding='utf-8')
+some_file.seek(0)
 lines = 0
 words = 0
 
 for line in some_file:
     lines += 1
+    line = line.replace('-', '').replace('.', '').replace(',', '').replace(';', '').replace('!', '').replace('?', '')
 
     flag = 1
     for letter in line:
