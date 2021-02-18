@@ -5,10 +5,10 @@ class Car:
     is_police: bool
 
     def __init__(self, speed, color, name, is_police=False):
-        Car.speed = speed
-        Car.color = color
-        Car.name = name
-        Car.is_police = is_police
+        self.speed = speed
+        self.color = color
+        self.name = name
+        self.is_police = is_police
 
     def go(self):
         print(f'{self.color} тачка {self.name} поехала.')
