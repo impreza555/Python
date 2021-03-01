@@ -5,21 +5,25 @@ class Data:
     @classmethod
     def conversion_to_number(cls, date):
         convert_date = []
+        try:
+            date_list = date.lower().split()
+            if len(date_list) != 3:
+                raise ValueError('Некорректный ввод!')
+            for i in date_list:
+                if i.isdigit():
+                    convert_date.append(int(i))
+                if i in Data.months:
+                    convert_date.append(Data.months.get(i))
+        except ValueError as exception:
+            return exception
 
-        date = date.lower().split()
-        for i in date:
-            if i.isdigit():
-                convert_date.append(int(i))
-            if i in Data.months:
-                convert_date.append(Data.months.get(i))
-        return convert_date[0], convert_date[1], convert_date[2]
+        return convert_date, cls.validation(date_list)
 
     @staticmethod
-    def validation(date):
-        date = date.lower().split()
-        day = date[0]
-        month = date[1]
-        year = date[2]
+    def validation(date_list):
+        day = date_list[0]
+        month = date_list[1]
+        year = date_list[2]
         answer = 'Дата корректна'
         if int(day) not in range(1, 32):
             answer = 'Неверная дата!'
@@ -39,4 +43,3 @@ data = input(f'Введите дату в формате дд мммм гггг 
 print(Data.conversion_to_number(data))
 my_data = Data()
 print(my_data.conversion_to_number(data))
-print(my_data.validation(data))
