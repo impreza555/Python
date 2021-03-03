@@ -68,3 +68,5 @@ print(storage.accounting())
 print(f'Попробуем добавить на склад "Васю Пупкина":\n{"-" * 36}')
 abc = 'Вася Пупкин'
 storage.take_for_storage(abc)
+
+pr2 = offequip.Printer('HP', 'DeskJet', '2500.5')

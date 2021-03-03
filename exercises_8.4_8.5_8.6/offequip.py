@@ -1,8 +1,3 @@
-class EquipmentError(Exception):
-    def __init__(self, text):
-        self.text = text
-
-
 class OfficeEquipment:
     eq_count = 0
 
@@ -12,6 +7,11 @@ class OfficeEquipment:
         self.model = model
         self.price = price
         self.eq_count += 1
+        try:
+            if type(self.price) != float:
+                raise ValueError('\033[31mЦена должна быть числом!\033[0m')
+        except ValueError as exception:
+            print(exception)
 
     def __str__(self):
         return f'Тип оргтехники: {self.type_eq} | Наименование: {self.name} | Модель: {self.model} | Цена: {self.price}'
