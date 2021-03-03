@@ -1,10 +1,10 @@
 class ComplexNumber:
 
-    def __str__(self):
-        return f'Комплексное число {self.comp_number}'
-
     def __init__(self, comp_number):
         self.comp_number = comp_number
+
+    def __str__(self):
+        return f'Комплексное число {self.comp_number}'
 
     def __add__(self, other):
         return ComplexNumber(self.comp_number + other.comp_number)

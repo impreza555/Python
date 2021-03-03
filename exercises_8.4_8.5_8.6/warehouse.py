@@ -1,3 +1,11 @@
+import offequip
+
+
+class WarehouseError(Exception):
+    def __init__(self, text):
+        self.text = text
+
+
 class OffEquipWarehouse:
 
     def __init__(self):
@@ -8,6 +16,11 @@ class OffEquipWarehouse:
 
     def take_for_storage(self, item: object):
         self.item = item
+        try:
+            if not isinstance(item, offequip.OfficeEquipment):
+                raise WarehouseError(f'\033[31m{item} не оргтехника\033[0m')
+        except WarehouseError as exception:
+            print(exception)
         self.warehouse.append(self.item)
 
     def __getitem__(self, index: int):
@@ -16,11 +29,11 @@ class OffEquipWarehouse:
     def accounting(self):
         total_price = 0
         quantity = 0
-        i = 0
-        while i < len(self.warehouse):
-            quantity += self.warehouse[i].eq_count
-            total_price += self.warehouse[i].price
-            i += 1
+        index = 0
+        while index < len(self.warehouse):
+            quantity += self.warehouse[index].eq_count
+            total_price += self.warehouse[index].price
+            index += 1
         return f'{"-" * 36}\nОбщая стоимость всей оргтехники равна: {total_price}\nКоличество оргтехники: {quantity}'
 
     def transfer_equipment(self, item: object):

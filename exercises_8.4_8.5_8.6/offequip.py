@@ -1,3 +1,8 @@
+class EquipmentError(Exception):
+    def __init__(self, text):
+        self.text = text
+
+
 class OfficeEquipment:
     eq_count = 0
 

@@ -64,3 +64,7 @@ storage.take_for_storage(sca2)
 print(f'Проверим склад:\n{"-" * 36}')
 print(storage)
 print(storage.accounting())
+
+print(f'Попробуем добавить на склад "Васю Пупкина":\n{"-" * 36}')
+abc = 'Вася Пупкин'
+storage.take_for_storage(abc)
